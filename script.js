@@ -12,7 +12,7 @@ function cargarDigimon() {
            
             
         // }
-        let img1 = dato[0].img
+        let img1 = dato[0].img   
         let nombre = dato[0].name
         let nivel = dato[0].level   
 
