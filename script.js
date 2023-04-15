@@ -5,13 +5,12 @@ function cargarDigimon() {
     .then(documento => documento.json())
     .then(dato => {
         console.log(dato)
-        // for (let i = 0; i < dato.length; i++) {
-        //     let elementos = dato[i];
-           
-        // console.log(elementos.name)
-           
-            
-        // }
+        
+     
+
+        /// TAREA PARA MA;ANA agregar los nombres de los digimon en el select HTML...
+
+
         let img1 = dato[0].img   
         let nombre = dato[0].name
         let nivel = dato[0].level   
@@ -27,4 +26,20 @@ function cargarDigimon() {
         niv.innerHTML = nivel
     })
 }
+function carga() {
+    fetch(`https://digimon-api.vercel.app/api/digimon`)
+    .then(documento => documento.json())
+    .then(dato=>{
+        let cargamos = document.getElementById('seleccioneDigimon')
+        dato.forEach(element => {
+           let opciones = document.createElement('option')
+           opciones.text = element.name
+            cargamos.add(opciones)
+           //console.log(element.name)
+        });
+
+    })
+  
+}
+document.addEventListener('DOMContentLoaded', carga)
 
